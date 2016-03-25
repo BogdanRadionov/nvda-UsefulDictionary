@@ -39,5 +39,5 @@ class GlobalPlugin(GlobalPlugin):
 			ui.browseableMessage(dictionarybox.getResult(text), dictionarybox.name)
 
 	__gestures = {
-		"kb:nvda+shift+v": "openDictionary"
+		"kb:nvda+v": "openDictionary"
 	}
