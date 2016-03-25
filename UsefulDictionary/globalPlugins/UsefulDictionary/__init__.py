@@ -38,6 +38,10 @@ class GlobalPlugin(GlobalPlugin):
 		if text:
 			ui.browseableMessage(dictionarybox.getResult(text), dictionarybox.name)
 
+	def script_binding(self, gesture):
+		ui.message(u'Эта клавиша закреплена за модулем UsefulDictionary, но сейчас не используется.')
+
 	__gestures = {
-		"kb:nvda+v": "openDictionary"
+		"kb:nvda+v": "openDictionary",
+		"kb:nvda+shift+v": "binding"
 	}
