@@ -12,7 +12,10 @@ from globalPluginHandler import GlobalPlugin
 import api
 import ui
 import textInfos
+import addonHandler
 import dictionarybox
+
+addonHandler.initTranslation()
 
 dictionaries = [
 	'dictionarybox',
@@ -28,7 +31,7 @@ def getSelectedText():
 	except (RuntimeError, NotImplementedError):
 		info=None
 	if not info or info.isCollapsed:
-		return ui.message(_("no selection"))
+		return ui.message(_('no selection'))
 	else:
 		return info.text
 
@@ -39,9 +42,10 @@ class GlobalPlugin(GlobalPlugin):
 			ui.browseableMessage(dictionarybox.getResult(text), dictionarybox.name)
 
 	def script_binding(self, gesture):
-		ui.message(u'Эта клавиша закреплена за модулем UsefulDictionary, но сейчас не используется.')
+		ui.message(_('This hotkey is binded with addon UsefulDictionary but not using now'))
 
 	__gestures = {
-		"kb:nvda+v": "openDictionary",
-		"kb:nvda+shift+v": "binding"
+		"kb:nvda+shift+w": "openDictionary",
+		"kb:nvda+control+w": "binding",
+		"kb:nvda+control+shift+w": "binding",
 	}
