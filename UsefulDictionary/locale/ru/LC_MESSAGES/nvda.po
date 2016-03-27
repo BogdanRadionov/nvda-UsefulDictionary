@@ -17,9 +17,9 @@ msgstr ""
 "X-Poedit-SearchPath-0: __init__.py\n"
 
 #: __init__.py:31
-msgid "no selection"
+msgid "No selection"
 msgstr "Нет выделенного текста"
 
 #: __init__.py:42
-msgid "This hotkey is binded with addon UsefulDictionary but not using now"
+msgid "This hotkey is bound to UsefulDictionary addon but is not currently being used"
 msgstr "Эта комбинация клавиш закреплена за дополнением Useful Dictionary, но на данный момент не используется"

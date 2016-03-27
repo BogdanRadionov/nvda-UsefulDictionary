@@ -31,7 +31,7 @@ def getSelectedText():
 	except (RuntimeError, NotImplementedError):
 		info=None
 	if not info or info.isCollapsed:
-		return ui.message(_('no selection'))
+		return ui.message(_('No selected text'))
 	else:
 		return info.text
 
@@ -42,7 +42,7 @@ class GlobalPlugin(GlobalPlugin):
 			ui.browseableMessage(dictionarybox.getResult(text), dictionarybox.name)
 
 	def script_binding(self, gesture):
-		ui.message(_('This hotkey is binded with addon UsefulDictionary but not using now'))
+		ui.message(_('This hotkey is bound to the UsefulDictionary addon but is not currently being used'))
 
 	__gestures = {
 		"kb:nvda+shift+w": "openDictionary",
