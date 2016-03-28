@@ -25,6 +25,7 @@ _dict = __import__(_conf['selected_dict'])
 dictionaries = {
 	'dictionarybox': ['auto'],
 	'mediawiki': ['ru', 'en'],
+	'yandextranslator': ['en-ru', 'ru-en'],
 }
 
 def getSelectedText():
@@ -74,6 +75,8 @@ class GlobalPlugin(GlobalPlugin):
 
 	def script_binding(self, gesture):
 		ui.message(_('This hotkey is bound to the UsefulDictionary addon but is not currently being used'))
+
+	script_openDictionary.__doc__=_('Send selected text to chosen resourse')
 
 	__gestures = {
 		"kb:nvda+w": "openDictionary",
