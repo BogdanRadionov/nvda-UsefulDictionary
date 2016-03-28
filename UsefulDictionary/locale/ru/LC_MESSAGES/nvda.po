@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: UsefulDictionary 1.0\n"
-"POT-Creation-Date: 2016-03-26 22:51+0200\n"
-"PO-Revision-Date: 2016-03-26 22:53+0200\n"
+"POT-Creation-Date: 2016-03-28 11:49+0300\n"
+"PO-Revision-Date: 2016-03-28 11:50+0300\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: en\n"
@@ -10,16 +10,62 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Poedit 1.8.7\n"
-"X-Poedit-Basepath: UsefulDictionary/globalPlugins/UsefulDictionary\n"
+"X-Poedit-Basepath: ../../../globalPlugins/UsefulDictionary\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
 "%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-SearchPath-0: __init__.py\n"
+"X-Poedit-SearchPath-1: __init__.py\n"
+"X-Poedit-SearchPath-2: dictionarybox.py\n"
+"X-Poedit-SearchPath-3: mediawiki.py\n"
 
-#: __init__.py:31
-msgid "No selection"
+#: __init__.py:40
+msgid "No selected text"
 msgstr "Нет выделенного текста"
 
-#: __init__.py:42
-msgid "This hotkey is bound to UsefulDictionary addon but is not currently being used"
-msgstr "Эта комбинация клавиш закреплена за дополнением Useful Dictionary, но на данный момент не используется"
+#: __init__.py:48
+msgid "Looking for information"
+msgstr "Ищу информацию"
+
+#: __init__.py:58
+#, python-brace-format
+msgid "Selected language: {0}"
+msgstr "Выбран язык: {0}"
+
+#: __init__.py:72
+#, python-brace-format
+msgid "Dictionary selected: {0}"
+msgstr "Был выбран словарь: {0}"
+
+#: __init__.py:73
+#, python-brace-format
+msgid "Language: {0}"
+msgstr "Язык: {0}"
+
+#: __init__.py:76
+msgid ""
+"This hotkey is bound to the UsefulDictionary addon but is not currently "
+"being used"
+msgstr ""
+"Эта комбинация клавиш зарезервирована расширением UsefulDictionary, но на "
+"данный момент не используется"
+
+#: dictionarybox.py:16
+msgid "No results"
+msgstr "Нет результатов"
+
+#~ msgid "Similar results:"
+#~ msgstr "Похожие результаты:"
+
+#~ msgid "Link on page"
+#~ msgstr "Ссылка на страницу"
+
+#~ msgid "No selection"
+#~ msgstr "Нет выделенного текста"
+
+#~ msgid ""
+#~ "This hotkey is bound to UsefulDictionary addon but is not currently being "
+#~ "used"
+#~ msgstr ""
+#~ "Эта комбинация клавиш закреплена за дополнением Useful Dictionary, но на "
+#~ "данный момент не используется"

@@ -13,11 +13,12 @@ def sendRequest(text):
 
 def parseResponse(response):
 	if not response:
-		return u'No results'
+		return _('No results')
 	result = []
 	for i in response[1:]:
 		result.append(i.text_content())
-	return '\n'.join(result).encode('raw-unicode-escape').decode('utf-8').replace(';', '.')
+	return '<br>'.join(result).encode('raw-unicode-escape').decode('utf-8').replace(';', '.').replace('\n', '<br>')
 
-def getResult(text):
-	return parseResponse(sendRequest(text))
+def getResult(text, lang=None, calback=None):
+	# argument "lang" is not using here
+	calback(parseResponse(sendRequest(text)), name, True)
