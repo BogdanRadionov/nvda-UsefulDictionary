@@ -2,6 +2,9 @@
 
 # Copyright (C) 2016 Bogdan Radionov <radionov.bogdan@gmail.com>
 
+import addonHandler
+addonHandler.initTranslation()
+
 import lxml.html
 
 name = u'Dictionary box'

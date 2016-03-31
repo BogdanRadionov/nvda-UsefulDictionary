@@ -28,6 +28,10 @@ dictionaries = {
 	'yandextranslator': ['en-ru', 'ru-en'],
 }
 
+_addonDir = os.path.join(os.path.dirname(__file__), "..", "..").decode("mbcs")
+_curAddon = addonHandler.Addon(_addonDir)
+_addonSummary = _curAddon.manifest['summary']
+
 def getSelectedText():
 	focus = api.getFocusObject()
 	treeInterceptor = focus.treeInterceptor
@@ -43,6 +47,8 @@ def getSelectedText():
 		return info.text
 
 class GlobalPlugin(GlobalPlugin):
+	scriptCategory = unicode(_addonSummary)
+
 	def script_openDictionary(self, gesture):
 		text = getSelectedText()
 		if text:
@@ -77,6 +83,8 @@ class GlobalPlugin(GlobalPlugin):
 		ui.message(_('This hotkey is bound to the UsefulDictionary addon but is not currently being used'))
 
 	script_openDictionary.__doc__=_('Send selected text to chosen resourse')
+	script_swithDict.__doc__=_('Swith resourse')
+	script_swithLang.__doc__=_('Swith language for selected resourse')
 
 	__gestures = {
 		"kb:nvda+w": "openDictionary",

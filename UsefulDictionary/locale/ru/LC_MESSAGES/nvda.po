@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: UsefulDictionary 1.0\n"
-"POT-Creation-Date: 2016-03-28 11:49+0300\n"
-"PO-Revision-Date: 2016-03-28 11:50+0300\n"
+"POT-Creation-Date: 2016-03-31 18:58+0300\n"
+"PO-Revision-Date: 2016-03-31 19:00+0300\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: en\n"
@@ -19,30 +19,30 @@ msgstr ""
 "X-Poedit-SearchPath-2: dictionarybox.py\n"
 "X-Poedit-SearchPath-3: mediawiki.py\n"
 
-#: __init__.py:40
+#: __init__.py:45
 msgid "No selected text"
 msgstr "Нет выделенного текста"
 
-#: __init__.py:48
+#: __init__.py:55
 msgid "Looking for information"
 msgstr "Ищу информацию"
 
-#: __init__.py:58
+#: __init__.py:65
 #, python-brace-format
 msgid "Selected language: {0}"
 msgstr "Выбран язык: {0}"
 
-#: __init__.py:72
+#: __init__.py:79
 #, python-brace-format
 msgid "Dictionary selected: {0}"
 msgstr "Был выбран словарь: {0}"
 
-#: __init__.py:73
+#: __init__.py:80
 #, python-brace-format
 msgid "Language: {0}"
 msgstr "Язык: {0}"
 
-#: __init__.py:76
+#: __init__.py:83
 msgid ""
 "This hotkey is bound to the UsefulDictionary addon but is not currently "
 "being used"
@@ -50,15 +50,29 @@ msgstr ""
 "Эта комбинация клавиш зарезервирована расширением UsefulDictionary, но на "
 "данный момент не используется"
 
-#: dictionarybox.py:16
+#: __init__.py:85
+msgid "Send selected text to chosen resourse"
+msgstr "Отправить выделенный текст на выбранный ресурс"
+
+#: __init__.py:86
+msgid "Swith resourse"
+msgstr "Переключение ресурса"
+
+#: __init__.py:87
+msgid "Swith language for selected resourse"
+msgstr "Переключить язык для выбранного ресурса"
+
+#: dictionarybox.py:19 mediawiki.py:26
 msgid "No results"
 msgstr "Нет результатов"
 
-#~ msgid "Similar results:"
-#~ msgstr "Похожие результаты:"
+#: mediawiki.py:16
+msgid "Similar results:"
+msgstr "Похожие результаты:"
 
-#~ msgid "Link on page"
-#~ msgstr "Ссылка на страницу"
+#: mediawiki.py:18
+msgid "Link on page"
+msgstr "Ссылка на страницу"
 
 #~ msgid "No selection"
 #~ msgstr "Нет выделенного текста"
