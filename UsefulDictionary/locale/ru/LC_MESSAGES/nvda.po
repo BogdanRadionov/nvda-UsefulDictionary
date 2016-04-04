@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: UsefulDictionary 1.0\n"
-"POT-Creation-Date: 2016-03-31 18:58+0300\n"
-"PO-Revision-Date: 2016-03-31 19:00+0300\n"
+"POT-Creation-Date: 2016-04-04 14:06+0300\n"
+"PO-Revision-Date: 2016-04-04 14:08+0300\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: en\n"
@@ -19,30 +19,30 @@ msgstr ""
 "X-Poedit-SearchPath-2: dictionarybox.py\n"
 "X-Poedit-SearchPath-3: mediawiki.py\n"
 
-#: __init__.py:45
+#: __init__.py:64
 msgid "No selected text"
 msgstr "Нет выделенного текста"
 
-#: __init__.py:55
+#: __init__.py:71
 msgid "Looking for information"
 msgstr "Ищу информацию"
 
-#: __init__.py:65
+#: __init__.py:81
 #, python-brace-format
 msgid "Selected language: {0}"
 msgstr "Выбран язык: {0}"
 
-#: __init__.py:79
+#: __init__.py:95
 #, python-brace-format
-msgid "Dictionary selected: {0}"
-msgstr "Был выбран словарь: {0}"
+msgid "Resourse selected: {0}"
+msgstr "Выбран ресурс: {0}"
 
-#: __init__.py:80
+#: __init__.py:96
 #, python-brace-format
 msgid "Language: {0}"
 msgstr "Язык: {0}"
 
-#: __init__.py:83
+#: __init__.py:99
 msgid ""
 "This hotkey is bound to the UsefulDictionary addon but is not currently "
 "being used"
@@ -50,19 +50,19 @@ msgstr ""
 "Эта комбинация клавиш зарезервирована расширением UsefulDictionary, но на "
 "данный момент не используется"
 
-#: __init__.py:85
+#: __init__.py:101
 msgid "Send selected text to chosen resourse"
 msgstr "Отправить выделенный текст на выбранный ресурс"
 
-#: __init__.py:86
+#: __init__.py:102
 msgid "Swith resourse"
 msgstr "Переключение ресурса"
 
-#: __init__.py:87
+#: __init__.py:103
 msgid "Swith language for selected resourse"
 msgstr "Переключить язык для выбранного ресурса"
 
-#: dictionarybox.py:19 mediawiki.py:26
+#: dictionarybox.py:19 mediawiki.py:27
 msgid "No results"
 msgstr "Нет результатов"
 
@@ -73,6 +73,13 @@ msgstr "Похожие результаты:"
 #: mediawiki.py:18
 msgid "Link on page"
 msgstr "Ссылка на страницу"
+
+#: mediawiki.py:30
+msgid "Similar articles:"
+msgstr "Похожие статьи:"
+
+#~ msgid "Dictionary selected: {0}"
+#~ msgstr "Был выбран словарь: {0}"
 
 #~ msgid "No selection"
 #~ msgstr "Нет выделенного текста"

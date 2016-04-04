@@ -23,5 +23,11 @@ def getResult(text, lang, calback=None):
 	try:
 		result = parseResponse(wikipedia.page(text))
 	except (PageError, DisambiguationError):
-		result = _('No results')
+		result = []
+		result.append('<h1>' + _('No results') + '</h1>')
+		similar = '<br>'.join(wikipedia.search(text))
+		if similar:
+			result.append('<br><h6>'+_('Similar articles:')+'</h6>')
+			result.append(similar)
+		result = ''.join(result)
 	calback(result, name, True)

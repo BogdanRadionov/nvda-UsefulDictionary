@@ -32,6 +32,7 @@ _addonDir = os.path.join(os.path.dirname(__file__), "..", "..").decode("mbcs")
 _curAddon = addonHandler.Addon(_addonDir)
 _addonSummary = _curAddon.manifest['summary']
 
+"""
 def getSelectedText():
 	focus = api.getFocusObject()
 	treeInterceptor = focus.treeInterceptor
@@ -45,12 +46,27 @@ def getSelectedText():
 		return ui.message(_('No selected text'))
 	else:
 		return info.text
+"""
 
 class GlobalPlugin(GlobalPlugin):
 	scriptCategory = unicode(_addonSummary)
 
+	def getSelectedText(self):
+		focus = api.getFocusObject()
+		treeInterceptor = focus.treeInterceptor
+		if hasattr(treeInterceptor, 'TextInfo') and not treeInterceptor.passThrough:
+			focus = treeInterceptor
+		try:
+			info = focus.makeTextInfo(textInfos.POSITION_SELECTION)
+		except (RuntimeError, NotImplementedError):
+			info=None
+		if not info or info.isCollapsed:
+			return ui.message(_('No selected text'))
+		else:
+			return info.text
+
 	def script_openDictionary(self, gesture):
-		text = getSelectedText()
+		text = self.getSelectedText()
 		if text:
 			ui.message(_('Looking for information'))
 			t = threading.Thread(target=_dict.getResult, args=[text, _conf[_conf["selected_dict"]], ui.browseableMessage])
@@ -76,7 +92,7 @@ class GlobalPlugin(GlobalPlugin):
 			_dict = __import__(dicts[num_selected_dict+1])
 			_conf['selected_dict'] = dicts[num_selected_dict+1]
 		_config.save_config()
-		ui.message(_('Dictionary selected: {0}').format(_dict.name))
+		ui.message(_('Resourse selected: {0}').format(_dict.name))
 		ui.message(_('Language: {0}').format(_conf[_conf['selected_dict']]))
 
 	def script_binding(self, gesture):
