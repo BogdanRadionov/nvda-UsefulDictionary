@@ -1,0 +1,5 @@
+*.pyc
+*.pyo
+*.cmd
+venv
+info.txt
