@@ -16,7 +16,7 @@ def sendRequest(text, lang):
 	return json.load(urllib2.urlopen(url_request.format(text=text, lang=lang)))
 
 def parseResponse(response):
-	return '\n'.join(response['text']).replace(';', '.')
+	return '\n'.join(response['text'])
 
 def getResult(text, lang, calback):
 	result = parseResponse(sendRequest(text, lang))
