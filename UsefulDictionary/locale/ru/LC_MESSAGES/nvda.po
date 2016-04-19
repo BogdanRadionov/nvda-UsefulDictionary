@@ -1,11 +1,11 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: UsefulDictionary 1.0\n"
-"POT-Creation-Date: 2016-04-04 14:06+0300\n"
-"PO-Revision-Date: 2016-04-04 14:08+0300\n"
+"Project-Id-Version: UsefulDictionary (Russian)\n"
+"POT-Creation-Date: 2016-04-13 19:59+0300\n"
+"PO-Revision-Date: 2016-04-13 20:00+0300\n"
 "Last-Translator: \n"
 "Language-Team: \n"
-"Language: en\n"
+"Language: ru_RU\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -23,42 +23,42 @@ msgstr ""
 msgid "No selected text"
 msgstr "Нет выделенного текста"
 
-#: __init__.py:71
+#: __init__.py:71 __init__.py:83
 msgid "Looking for information"
 msgstr "Ищу информацию"
 
 #: __init__.py:81
+msgid "Clipboard don't contains text"
+msgstr "В буфере обмена нет текста"
+
+#: __init__.py:93
 #, python-brace-format
 msgid "Selected language: {0}"
 msgstr "Выбран язык: {0}"
 
-#: __init__.py:95
+#: __init__.py:107
 #, python-brace-format
 msgid "Resourse selected: {0}"
 msgstr "Выбран ресурс: {0}"
 
-#: __init__.py:96
+#: __init__.py:108
 #, python-brace-format
 msgid "Language: {0}"
 msgstr "Язык: {0}"
 
-#: __init__.py:99
-msgid ""
-"This hotkey is bound to the UsefulDictionary addon but is not currently "
-"being used"
-msgstr ""
-"Эта комбинация клавиш зарезервирована расширением UsefulDictionary, но на "
-"данный момент не используется"
-
-#: __init__.py:101
+#: __init__.py:110
 msgid "Send selected text to chosen resourse"
 msgstr "Отправить выделенный текст на выбранный ресурс"
 
-#: __init__.py:102
+#: __init__.py:111
+msgid "Send text clipboard to chosen resourse"
+msgstr "Отправить текст из буфера обмена на выбранный ресурс"
+
+#: __init__.py:112
 msgid "Swith resourse"
 msgstr "Переключение ресурса"
 
-#: __init__.py:103
+#: __init__.py:113
 msgid "Swith language for selected resourse"
 msgstr "Переключить язык для выбранного ресурса"
 
@@ -77,6 +77,13 @@ msgstr "Ссылка на страницу"
 #: mediawiki.py:30
 msgid "Similar articles:"
 msgstr "Похожие статьи:"
+
+#~ msgid ""
+#~ "This hotkey is bound to the UsefulDictionary addon but is not currently "
+#~ "being used"
+#~ msgstr ""
+#~ "Эта комбинация клавиш зарезервирована расширением UsefulDictionary, но на "
+#~ "данный момент не используется"
 
 #~ msgid "Dictionary selected: {0}"
 #~ msgstr "Был выбран словарь: {0}"

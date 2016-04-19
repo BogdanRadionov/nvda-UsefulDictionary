@@ -11,7 +11,7 @@ name = u'Mediawiki'
 def parseResponse(response):
 	result = []
 	result.append('<h1>'+response.original_title+'</h1>')
-	content = response.content.replace(';', '.').replace('\n', '<br>').replace('<br>== ', '<h2>').replace(' ==<br>', '</h2>').replace('<br>=== ', '<h3>').replace(' ===<br>', '</h3>').replace('<br>==== ', '<h4>').replace(' ====<br>', '</h4>')
+	content = response.content.replace('\n', '<br>').replace('<br>== ', '<h2>').replace(' ==<br>', '</h2>').replace('<br>=== ', '<h3>').replace(' ===<br>', '</h3>').replace('<br>==== ', '<h4>').replace(' ====<br>', '</h4>')
 	result.append(content)
 	result.append('<br><h6>'+_('Similar results:')+'</h6>')
 	result.append('<br>'.join(wikipedia.search(response.title)).replace(';', '.'))

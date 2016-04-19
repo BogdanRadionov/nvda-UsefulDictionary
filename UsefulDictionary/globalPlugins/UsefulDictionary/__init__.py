@@ -73,6 +73,18 @@ class GlobalPlugin(GlobalPlugin):
 			t = threading.Thread(target=_dict.getResult, args=[text, _conf[_conf["selected_dict"]], ui.browseableMessage])
 			t.start()
 
+	def script_openDictionaryForBuffer(self, gesture):
+		try:
+			text = api.getClipData()
+		except:
+			text = None
+		if not text or not isinstance(text,basestring) or text.isspace():
+			ui.message(_("Clipboard don't contains text"))
+		else:
+			ui.message(_('Looking for information'))
+			t = threading.Thread(target=_dict.getResult, args=[text, _conf[_conf["selected_dict"]], ui.browseableMessage])
+			t.start()
+
 	def script_swithLang(self, gesture):
 		num_lang = dictionaries[_conf['selected_dict']].index(_conf[_conf['selected_dict']]) 
 		if num_lang >= len(dictionaries[_conf['selected_dict']])-1:
@@ -96,16 +108,14 @@ class GlobalPlugin(GlobalPlugin):
 		ui.message(_('Resourse selected: {0}').format(_dict.name))
 		ui.message(_('Language: {0}').format(_conf[_conf['selected_dict']]))
 
-	def script_binding(self, gesture):
-		ui.message(_('This hotkey is bound to the UsefulDictionary addon but is not currently being used'))
-
 	script_openDictionary.__doc__=_('Send selected text to chosen resourse')
+	script_openDictionaryForBuffer.__doc__=_('Send text clipboard to chosen resourse')
 	script_swithDict.__doc__=_('Swith resourse')
 	script_swithLang.__doc__=_('Swith language for selected resourse')
 
 	__gestures = {
 		"kb:nvda+w": "openDictionary",
-		"kb:nvda+shift+w": "binding",
+		"kb:nvda+shift+w": "openDictionaryForBuffer",
 		"kb:nvda+control+w": "swithLang",
 		"kb:nvda+control+shift+w": "swithDict",
 	}
