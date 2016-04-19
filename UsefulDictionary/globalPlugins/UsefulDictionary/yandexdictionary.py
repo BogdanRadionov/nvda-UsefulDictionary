@@ -1,5 +1,7 @@
 #-*- coding:utf-8 -*-
 
+# Copyright (C) 2016 Olexandr Gryshchenko <grisov.dev@mailnull.com>
+
 import addonHandler
 addonHandler.initTranslation()
 
