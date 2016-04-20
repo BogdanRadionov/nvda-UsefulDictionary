@@ -1,5 +1,6 @@
 *.pyc
 *.pyo
 *.cmd
+*.bak
 venv
 info.txt
