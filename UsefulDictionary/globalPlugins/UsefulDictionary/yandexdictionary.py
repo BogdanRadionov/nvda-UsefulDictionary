@@ -23,9 +23,9 @@ def parseResponse(response):
 		if response.has_key(elem_key):
 			prev_elem = elem_key
 			text += {
-				"syn":	u"\nсинонимы: ",
-				"mean":	u"\nзначение: ",
-				"ex":	u"\nнапример: "
+				"syn":	_("\nSynonym: "),
+				"mean":	_("\nMean: "),
+				"ex":	_("\nExample: ")
 				}.get(elem_key, "")
 			for elem in response[elem_key]:
 				for attr_key in ["text", "pos"]:	# "asp", "num", "gen"

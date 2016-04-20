@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: UsefulDictionary (Russian)\n"
-"POT-Creation-Date: 2016-04-13 19:59+0300\n"
-"PO-Revision-Date: 2016-04-13 20:00+0300\n"
+"POT-Creation-Date: 2016-04-20 17:06+0300\n"
+"PO-Revision-Date: 2016-04-20 17:09+0300\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: ru_RU\n"
@@ -18,65 +18,102 @@ msgstr ""
 "X-Poedit-SearchPath-1: __init__.py\n"
 "X-Poedit-SearchPath-2: dictionarybox.py\n"
 "X-Poedit-SearchPath-3: mediawiki.py\n"
+"X-Poedit-SearchPath-4: __init__.py\n"
+"X-Poedit-SearchPath-5: dictionarybox.py\n"
+"X-Poedit-SearchPath-6: mediawiki.py\n"
+"X-Poedit-SearchPath-7: yandexdictionary.py\n"
+"X-Poedit-SearchPath-8: yandextranslator.py\n"
 
-#: __init__.py:64
+#: __init__.py:65
 msgid "No selected text"
 msgstr "Нет выделенного текста"
 
-#: __init__.py:71 __init__.py:83
+#: __init__.py:72 __init__.py:84
 msgid "Looking for information"
 msgstr "Ищу информацию"
 
-#: __init__.py:81
+#: __init__.py:82
 msgid "Clipboard don't contains text"
 msgstr "В буфере обмена нет текста"
 
-#: __init__.py:93
+#: __init__.py:94
 #, python-brace-format
 msgid "Selected language: {0}"
 msgstr "Выбран язык: {0}"
 
-#: __init__.py:107
+#: __init__.py:108
 #, python-brace-format
 msgid "Resourse selected: {0}"
 msgstr "Выбран ресурс: {0}"
 
-#: __init__.py:108
+#: __init__.py:109
 #, python-brace-format
 msgid "Language: {0}"
 msgstr "Язык: {0}"
 
-#: __init__.py:110
+#: __init__.py:111
 msgid "Send selected text to chosen resourse"
 msgstr "Отправить выделенный текст на выбранный ресурс"
 
-#: __init__.py:111
+#: __init__.py:112
 msgid "Send text clipboard to chosen resourse"
 msgstr "Отправить текст из буфера обмена на выбранный ресурс"
 
-#: __init__.py:112
+#: __init__.py:113
 msgid "Swith resourse"
 msgstr "Переключение ресурса"
 
-#: __init__.py:113
+#: __init__.py:114
 msgid "Swith language for selected resourse"
 msgstr "Переключить язык для выбранного ресурса"
 
-#: dictionarybox.py:19 mediawiki.py:27
+#: dictionarybox.py:20 mediawiki.py:28
 msgid "No results"
 msgstr "Нет результатов"
 
-#: mediawiki.py:16
+#: mediawiki.py:17
 msgid "Similar results:"
 msgstr "Похожие результаты:"
 
-#: mediawiki.py:18
+#: mediawiki.py:19
 msgid "Link on page"
 msgstr "Ссылка на страницу"
 
-#: mediawiki.py:30
+#: mediawiki.py:31
 msgid "Similar articles:"
 msgstr "Похожие статьи:"
+
+#: yandexdictionary.py:12
+msgid "Yandex Dictionary"
+msgstr "Яндекс словарь"
+
+#: yandexdictionary.py:26
+msgid ""
+"\n"
+"Synonym: "
+msgstr ""
+"\n"
+"Синонимы: "
+
+#: yandexdictionary.py:27
+msgid ""
+"\n"
+"Mean: "
+msgstr ""
+"\n"
+"Значение: "
+
+#: yandexdictionary.py:28
+msgid ""
+"\n"
+"Example: "
+msgstr ""
+"\n"
+"Например: "
+
+#: yandextranslator.py:11
+msgid "Yandex translator"
+msgstr "Яндекс переводчик"
 
 #~ msgid ""
 #~ "This hotkey is bound to the UsefulDictionary addon but is not currently "
