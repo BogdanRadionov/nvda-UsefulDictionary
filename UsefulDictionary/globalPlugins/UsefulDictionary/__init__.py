@@ -26,6 +26,7 @@ dictionaries = {
 	'dictionarybox': ['auto'],
 	'mediawiki': ['ru', 'en'],
 	'yandextranslator': ['en-ru', 'ru-en'],
+	'yandexdictionary': ['en-ru', 'ru-en'],
 }
 
 _addonDir = os.path.join(os.path.dirname(__file__), "..", "..").decode("mbcs")
