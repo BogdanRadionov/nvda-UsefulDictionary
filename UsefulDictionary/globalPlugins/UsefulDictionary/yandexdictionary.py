@@ -27,8 +27,8 @@ def getAttributes(dictElem):
    for key in ["pos", "asp", "num", "gen"]:
       if dictElem.has_key(key):
          field = {
-            "num":	u"<i>number</i>: ",
-            "gen":	u"<i>gender</i>: "
+            "num":	_("<i>number</i>: "),
+            "gen":	_("<i>gender</i>: ")
          }.get(key, "") + dictElem.get(key)
          attrs.append(field)
    if len(attrs) > 0:
@@ -62,13 +62,13 @@ text-decoration:none;
    for key in ["def", "tr", "mean", "syn", "ex"]:
       if response.has_key(key):
          text += {
-            "mean":	u"<p><i>Mean</i>: ",
-            "syn":	u"<p><i>Synonyms</i>: ",
-            "ex":	u"<p><i>Examples</i>: "
+            "mean":	_("<p><i>Mean</i>: "),
+            "syn":	_("<p><i>Synonyms</i>: "),
+            "ex":	_("<p><i>Examples</i>: ")
          }.get(key, "")
          if key == "def":
             if len(response.get("def"))==0:
-               text += u"<h1>no_results</h1>"
+               text += _("<h1>no_results</h1>")
             for elem in response.get("def"):
                text += "<h1>" + elem.get("text") + getAttributes(elem) + "</h1>\n"
                text += parseResponse(elem)
