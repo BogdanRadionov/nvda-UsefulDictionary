@@ -7,18 +7,26 @@
 import addonHandler
 addonHandler.initTranslation()
 
-import urllib2
-import json
+from urllib2 import build_opener, Request, HTTPSHandler
+import json, ssl
 
 name = _(u'Yandex Dictionary')
 key = "dict.1.1.20160323T212613Z.04d6a10330c1ea29.1553d28e327c7dbf882a82d190e8898ea4313f70"
 url_request = 'https://dictionary.yandex.net/api/v1/dicservice.json/lookup?key=' + key + '&ui=ru&lang={lang}&text={text}'
 
 
-
 def sendRequest(text, lang='en-ru'):
-   request = json.load(urllib2.urlopen(url_request.format(text=text.encode('utf-8'), lang=lang)))
-   return request
+   ctx = ssl.create_default_context()
+   ctx.check_hostname = False
+   ctx.verify_mode = ssl.CERT_NONE
+   try:
+      opener = build_opener(HTTPSHandler(context=ctx))
+      req = Request(url_request.format(text=text.encode('utf-8'), lang=lang))
+      req.get_method = lambda: 'POST'
+      response = json.loads(opener.open(req).read().decode('utf-8'))
+   except:
+      pass
+   return response
 
 def getAttributes(dictElem):
    if not isinstance(dictElem, dict):
