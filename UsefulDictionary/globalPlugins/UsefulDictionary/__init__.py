@@ -17,8 +17,6 @@ import ui
 import textInfos
 import threading
 import _config
-
-_config.load_config()
 _conf = _config._conf
 _dict = __import__(_conf['selected_dict'])
 
