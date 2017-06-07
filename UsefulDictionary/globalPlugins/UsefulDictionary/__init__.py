@@ -87,10 +87,10 @@ class GlobalPlugin(GlobalPlugin):
 		conf = _config.load_config()
 		num_lang = dictionaries[conf['selected_dict']].index(conf[conf['selected_dict']]) 
 		if num_lang >= len(dictionaries[conf['selected_dict']])-1:
-			conf[conf['selected_dict']] = dictionaries[_conf['selected_dict']][0]
+			conf[conf['selected_dict']] = dictionaries[conf['selected_dict']][0]
 		else:
 			conf[conf['selected_dict']] = dictionaries[conf['selected_dict']][num_lang+1]
-		ui.message(_('Selected language: {0}').format(_conf[_conf['selected_dict']]))
+		ui.message(_('Selected language: {0}').format(conf[conf['selected_dict']]))
 		_config.save_config(conf)
 
 	def script_swithDict(self, gesture):
@@ -106,7 +106,7 @@ class GlobalPlugin(GlobalPlugin):
 			conf['selected_dict'] = dicts[num_selected_dict+1]
 		_config.save_config(conf)
 		ui.message(_('Resourse selected: {0}').format(_dict.name))
-		ui.message(_('Language: {0}').format(_conf[_conf['selected_dict']]))
+		ui.message(_('Language: {0}').format(conf[conf['selected_dict']]))
 
 	script_openDictionary.__doc__=_('Send selected text to chosen resourse')
 	script_openDictionaryForBuffer.__doc__=_('Send text clipboard to chosen resourse')
