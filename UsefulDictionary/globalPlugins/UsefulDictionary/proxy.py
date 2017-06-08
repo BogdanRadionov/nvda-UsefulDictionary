@@ -3,13 +3,15 @@
 # Copyright Bogdan Radionov <radionov.bogdan@gmail.com>
 
 import lxml.html
+import requests
 
-resource_proxies = 'http://www.sslproxies.org/'
+resource_proxies = 'http://www.sslproxies.org'
 
 class Proxies(object):
 	def __init__(self):
 		self.proxies = []
-		self.response = lxml.html.parse(resource_proxies).getroot()
+		response = requests.get(resource_proxies).text
+		self.response = lxml.html.fromstring(response)
 		for p in self.response.xpath("id('proxylisttable')/tbody/tr"):
 			if p.xpath('td[5]')[0].text_content() == 'anonymous' and p.xpath('td[7]')[0].text_content() == 'yes' and p.xpath('td[3]')[0].text_content() != 'UA' and p.xpath('td[4]')[0].text_content() != 'UKRAINE':
 				self.proxies.append('{0}:{1}'.format(p.xpath('td[1]')[0].text_content(), p.xpath('td[2]')[0].text_content()))
