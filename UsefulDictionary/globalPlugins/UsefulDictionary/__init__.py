@@ -62,6 +62,30 @@ class GlobalPlugin(GlobalPlugin):
 		else:
 			return info.text
 
+	def message(self, message, *args):
+		""" This  wrapper for ui.message function with many arguments """
+		ui.message(message)
+
+	def script_speakResult(self, gesture):
+		conf = _config.load_config()
+		text = self.getSelectedText()
+		if text:
+			t = threading.Thread(target=_dict.getResult, args=[text, conf[conf["selected_dict"]], self.message])
+			t.start()
+
+	def script_speakResultForBuffer(self, gesture):
+		conf = _config.load_config()
+		try:
+			text = api.getClipData()
+		except:
+			text = None
+		if not text or not isinstance(text,basestring) or text.isspace():
+			ui.message(_("Clipboard don't contains text"))
+		else:
+			t = threading.Thread(target=_dict.getResult, args=[text, conf[conf["selected_dict"]], self.message])
+			t.start()
+
+
 	def script_openDictionary(self, gesture):
 		conf = _config.load_config()
 		text = self.getSelectedText()
@@ -118,4 +142,6 @@ class GlobalPlugin(GlobalPlugin):
 		"kb:nvda+shift+w": "openDictionaryForBuffer",
 		"kb:nvda+control+w": "swithLang",
 		"kb:nvda+control+shift+w": "swithDict",
+		"kb:nvda+shift+t": "speakResult",
+		"kb:nvda+shift+y": "speakResultForBuffer",
 	}
