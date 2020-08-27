@@ -7,18 +7,28 @@
 import addonHandler
 addonHandler.initTranslation()
 
-import urllib2
-import json
+from urllib2 import Request, build_opener, HTTPSHandler, ProxyHandler
+import json, ssl
 
 name = _(u'Yandex Dictionary')
-key = "dict.1.1.20160323T212613Z.04d6a10330c1ea29.1553d28e327c7dbf882a82d190e8898ea4313f70"
+key = "dict.1.1.20160512T220906Z.4a4ee160a921aa01.a74981e0761f48a1309d4f903e540f1f3288f1a3"
 url_request = 'https://dictionary.yandex.net/api/v1/dicservice.json/lookup?key=' + key + '&ui=ru&lang={lang}&text={text}'
 
 
-
 def sendRequest(text, lang='en-ru'):
-   request = json.load(urllib2.urlopen(url_request.format(text=text.encode('utf-8'), lang=lang)))
-   return request
+   ctx = ssl.create_default_context()
+   ctx.check_hostname = False
+   ctx.verify_mode = ssl.CERT_NONE
+   proxy = ProxyHandler({'https': '199.201.121.139:3128'})
+   try:
+      opener = build_opener(proxy)
+      opener.add_handler(HTTPSHandler(context=ctx))
+      req = Request(url_request.format(text=text.encode('utf-8'), lang=lang))
+      req.get_method = lambda: 'POST'
+      response = json.loads(opener.open(req).read().decode('utf-8'))
+   except:
+      response = ''
+   return response
 
 def getAttributes(dictElem):
    if not isinstance(dictElem, dict):
@@ -38,27 +48,9 @@ def getAttributes(dictElem):
    return ""
 
 def parseResponse(response):
-   text = '''<style>
-h1 {
-margin:0;
-font-family:Verdena, Arial Black, Helvetica, sans-serif;
-font-size:22px;
-font-weight:bold;
-text-decoration:none;
-text-align:left;
-}
-ul {
-list-style:square;
-}
-li {
-font-size:16px;
-text-decoration:none;
-}
-p {
-font-size:16px;
-text-decoration:none;
-}
-</style>'''
+   if isinstance(response, str):
+      return "Response_Error!"
+   text = ''
    for key in ["def", "tr", "mean", "syn", "ex"]:
       if response.has_key(key):
          text += {
@@ -79,7 +71,7 @@ text-decoration:none;
                text += "<li><b>" + elem.get("text") + "</b>" + getAttributes(elem) + "\n"
                text += parseResponse(elem)
                text += "</li>\n";
-            text += "</ul\n>"
+            text += "</ul>\n"
          if key == "mean":
             means = []
             for elem in response.get("mean"):
@@ -117,6 +109,28 @@ text-decoration:none;
                   del(exs)
    return text
 
+html_style = '''<style>
+h1 {
+margin:0;
+font-family:Verdena, Arial Black, Helvetica, sans-serif;
+font-size:22px;
+font-weight:bold;
+text-decoration:none;
+text-align:left;
+}
+ul {
+list-style:square;
+}
+li {
+font-size:16px;
+text-decoration:none;
+}
+p {
+font-size:16px;
+text-decoration:none;
+}
+</style>\n'''
+
 def getResult(text, lang, calback):
-   result = parseResponse(sendRequest(text, lang))
+   result = html_style + parseResponse(sendRequest(text, lang))
    calback(result, name, True)
